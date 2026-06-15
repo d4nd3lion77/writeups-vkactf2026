@@ -1,0 +1,8 @@
+services:
+  pwn-medium-scoreboard:
+    build: .
+    ports:
+      - "1337:1337"
+    restart: always
+    environment:
+      - FLAG=vkactf{russian_hacker_hacked_the_scoreboard}
