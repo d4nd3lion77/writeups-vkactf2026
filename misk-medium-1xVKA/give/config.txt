@@ -1,0 +1,12 @@
+'username' => 'admin',
+'password' => 'Admin@OlympBet2026',
+'rp_id'   => 'localhost',
+'rp_name' => '1xVKA',
+'origin'  => 'http://localhost:8000',
+'timeout' => 60000,
+'public_key' => <<<'PEM'
+-----BEGIN PUBLIC KEY-----
+MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEStCAV37UfdKqJS1MaI/Dj+KI95tG
+b6YnuwUYCIqu3/SyBh/MK5hKJq2/YIr5jgpqs7rWbMqfHiIqH+TyHo0jEg==
+-----END PUBLIC KEY-----
+PEM,
