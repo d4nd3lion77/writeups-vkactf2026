@@ -1,0 +1,22 @@
+{
+  "name": "deskline",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Small team messenger service",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "NODE_ENV=development node src/server.js",
+    "bot": "node src/support-bot.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^11.9.1",
+    "connect-sqlite3": "^0.9.15",
+    "express": "^4.19.2",
+    "express-session": "^1.18.1",
+    "helmet": "^7.1.0",
+    "puppeteer-core": "^24.1.1",
+    "ws": "^8.18.0"
+  }
+}

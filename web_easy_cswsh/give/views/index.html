@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Deskline</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <main id="auth" class="auth">
+      <section class="auth-panel">
+        <div class="brand">
+          <span class="brand-mark">D</span>
+          <div>
+            <h1>Deskline</h1>
+            <p>Private workspace messages</p>
+          </div>
+        </div>
+        <form id="login-form" class="stack">
+          <input name="username" autocomplete="username" placeholder="username" required>
+          <input name="password" autocomplete="current-password" type="password" placeholder="password" required>
+          <button type="submit">Sign in</button>
+        </form>
+        <form id="register-form" class="stack compact">
+          <input name="username" autocomplete="username" placeholder="new username" required>
+          <input name="password" autocomplete="new-password" type="password" placeholder="new password" required>
+          <button type="submit" class="secondary">Create account</button>
+        </form>
+        <p id="auth-error" class="notice error"></p>
+      </section>
+    </main>
+
+    <main id="app" class="app hidden">
+      <header class="app-top">
+        <a class="app-brand" href="/chats">
+          <span class="brand-mark small">D</span>
+          <span>Deskline</span>
+        </a>
+        <nav class="top-nav" aria-label="Main navigation">
+          <a href="/chats" data-page="chats">Chats</a>
+          <a href="/friends" data-page="friends">Friends</a>
+          <a href="/profile" data-page="profile">Profile</a>
+        </nav>
+        <div class="account">
+          <span class="avatar" id="avatar">D</span>
+          <span class="account-name" id="me"></span>
+          <button id="logout" class="secondary">Sign out</button>
+        </div>
+      </header>
+
+      <section id="page-chats" class="page hidden">
+        <div class="page-head">
+          <div>
+            <h1>Chats</h1>
+            <p>Open a conversation with one of your friends.</p>
+          </div>
+          <span id="chat-count" class="pill"></span>
+        </div>
+        <div class="search-line">
+          <input id="chat-search" placeholder="Search friends">
+        </div>
+        <section id="support-inbox" class="support-inbox hidden">
+          <div class="section-head">
+            <h2>Support inbox</h2>
+            <span id="ticket-count" class="pill"></span>
+          </div>
+          <input id="ticket-uid-input" placeholder="Open report by ticket uid">
+          <div id="ticket-list" class="list"></div>
+        </section>
+        <div id="chat-search-panel" class="list"></div>
+        <div id="chat-list" class="list"></div>
+      </section>
+
+      <section id="page-friends" class="page hidden">
+        <div class="page-head">
+          <div>
+            <h1>Friends</h1>
+            <p>Manage contacts and add people by username.</p>
+          </div>
+          <span id="friend-count" class="pill"></span>
+        </div>
+        <div class="search-line">
+          <input id="friend-search" placeholder="Find people">
+        </div>
+        <div id="friend-search-panel" class="list"></div>
+        <div id="friend-list" class="list"></div>
+      </section>
+
+      <section id="page-profile" class="page hidden">
+        <div class="page-head">
+          <div>
+            <h1>Profile</h1>
+            <p>Keep your workspace profile up to date.</p>
+          </div>
+          <span id="role" class="pill"></span>
+        </div>
+
+        <section class="profile-summary">
+          <div>
+            <span class="field-label">Status</span>
+            <strong id="current-status">No status yet</strong>
+          </div>
+        </section>
+
+        <form id="profile-form" class="profile-form">
+          <label>
+            <span class="field-label">First name</span>
+            <input id="first-name" name="first_name" placeholder="First name">
+          </label>
+          <label>
+            <span class="field-label">Last name</span>
+            <input id="last-name" name="last_name" placeholder="Last name">
+          </label>
+          <label>
+            <span class="field-label">Team role</span>
+            <input id="position" name="position" placeholder="Engineer, designer, analyst">
+          </label>
+          <label>
+            <span class="field-label">Location</span>
+            <input id="location-field" name="location" placeholder="City or timezone">
+          </label>
+          <label class="wide">
+            <span class="field-label">New status</span>
+            <textarea id="status-input" name="bio" maxlength="240" placeholder="Share a short status"></textarea>
+          </label>
+          <button id="save-profile" type="submit">Save profile</button>
+        </form>
+      </section>
+
+      <section id="page-chat" class="page chat-page hidden">
+        <div class="chat-head">
+          <a class="secondary link-button" href="/chats">Back</a>
+          <div>
+            <h1 id="chat-title">Conversation</h1>
+            <p id="chat-subtitle"></p>
+          </div>
+          <button id="report" class="secondary hidden">Report</button>
+        </div>
+        <div id="messages" class="messages"></div>
+        <form id="message-form" class="composer">
+          <input id="message-input" placeholder="Message" autocomplete="off" disabled>
+          <button id="send-button" disabled>Send</button>
+        </form>
+      </section>
+    </main>
+
+    <div id="toast" class="toast hidden"></div>
+    <script src="/app.js"></script>
+  </body>
+</html>

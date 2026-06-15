@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Deskline Review</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f4efe7;
+        --card: #fffdf8;
+        --line: #d8ccbc;
+        --text: #2f2418;
+        --muted: #6f6557;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        font-family: "Segoe UI", system-ui, sans-serif;
+        background: linear-gradient(180deg, #f8f3ec 0%, #efe5d8 100%);
+        color: var(--text);
+      }
+
+      main {
+        width: min(760px, calc(100vw - 32px));
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        background: var(--card);
+        box-shadow: 0 18px 40px rgba(46, 34, 18, 0.12);
+        overflow: hidden;
+      }
+
+      header, pre {
+        padding: 18px 20px;
+      }
+
+      header {
+        border-bottom: 1px solid var(--line);
+      }
+
+      h1 {
+        margin: 0 0 6px;
+        font-size: 20px;
+      }
+
+      p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      pre {
+        min-height: 240px;
+        margin: 0;
+        background: #fcf8f1;
+        white-space: pre-wrap;
+        word-break: break-word;
+        font: 13px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Deskline Review Thread</h1>
+        <p>Loading review context.</p>
+      </header>
+      <pre id="log"></pre>
+    </main>
+    <script src="/desk-thread.js"></script>
+  </body>
+</html>
+

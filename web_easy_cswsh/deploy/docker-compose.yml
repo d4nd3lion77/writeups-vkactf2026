@@ -1,0 +1,19 @@
+services:
+  deskline:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3000:3000"
+    environment:
+      SESSION_SECRET: "${SESSION_SECRET}"
+      BASE_URL: "${BASE_URL}"
+      ADMIN_PASSWORD: "${ADMIN_PASSWORD}"
+      SUPPORT_PASSWORD: "${SUPPORT_PASSWORD}"
+      COOKIE_SAMESITE: "none"
+      COOKIE_SECURE: "true"
+      CHROME_PATH: "/usr/bin/chromium"
+      SUPPORT_WORKERS: "8"
+      SUPPORT_VISIT_TIMEOUT_MS: "20000"
+    volumes:
+      - ./data:/app/data
+      - ./flag.txt:/app/flag.txt:ro
