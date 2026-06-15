@@ -1,0 +1,218 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+  body {
+    background: url('/themes/core/static/img/teams.png') center center / cover no-repeat fixed;
+  }
+
+  .page-bg {
+    min-height: 100vh;
+    padding-bottom: 50px;
+  }
+
+  .hero-header {
+    min-height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-header h1 {
+    color: #0057ff;
+    font-size: 3.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 0;
+    text-shadow:
+      0 2px 10px rgba(255,255,255,.8),
+      0 4px 20px rgba(0,87,255,.15);
+  }
+
+  .team-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+  }
+
+  .team-tile {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 35px;
+    box-shadow: 0 10px 35px rgba(0,0,0,.18);
+    text-align: center;
+  }
+
+  .team-title {
+    color: #304e86;
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+  }
+
+  .team-description {
+    color: #5f6f90;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 25px;
+  }
+
+  .btn-main {
+    background: linear-gradient(
+      135deg,
+      #0257A9 0%,
+      #073570 55%,
+      #021f4d 100%
+    ) !important;
+
+    border: none !important;
+    color: #fff !important;
+    border-radius: 10px;
+    font-weight: 700;
+    padding: 12px 24px;
+
+    box-shadow:
+      0 8px 20px rgba(0,87,255,.25),
+      inset 0 1px 0 rgba(255,255,255,.15);
+
+    transition: all .25s ease;
+  }
+
+  .btn-main:hover {
+    transform: translateY(-2px);
+
+    background: linear-gradient(
+      135deg,
+      #1a6cff 0%,
+      #0b4ebd 55%,
+      #073570 100%
+    ) !important;
+
+    color: #fff !important;
+  }
+
+  .btn-outline-custom {
+    border: 2px solid #0057ff !important;
+    color: #0057ff !important;
+    border-radius: 10px;
+    font-weight: 700;
+    padding: 12px 24px;
+    background: #fff;
+    transition: all .25s ease;
+  }
+
+  .btn-outline-custom:hover {
+    background: #0057ff !important;
+    color: #fff !important;
+  }
+
+  @media (max-width: 768px) {
+    .hero-header h1 {
+      font-size: 2.5rem;
+    }
+
+    .team-wrapper {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    .team-tile {
+      padding: 25px;
+    }
+  }
+</style>
+
+<div class="page-bg">
+
+  <div class="hero-header">
+    <div class="container text-center">
+      <h1>{% trans %}Команда{% endtrans %}</h1>
+    </div>
+  </div>
+
+  <div class="team-wrapper">
+
+    <div class="team-tile">
+
+      <h2 class="team-title">
+        {% trans %}Добро пожаловать на{% endtrans %} {{ Configs.ctf_name }}!
+      </h2>
+
+      <p class="team-description">
+        {% trans %}Чтобы участвовать присоединитесь к существующей команде или создайте свою собственную.{% endtrans %}
+      </p>
+
+      {% if integrations.mlc() %}
+
+        <div class="row justify-content-center">
+
+          <div class="col-md-8 mb-3">
+            <a
+              class="btn btn-main w-100"
+              href="{{ url_for('auth.oauth_login') }}"
+            >
+              {% trans %}Play with Official Team{% endtrans %}
+            </a>
+          </div>
+
+        </div>
+
+        <div class="row justify-content-center">
+
+          <div class="col-md-4 mb-3">
+            <a
+              class="btn btn-outline-custom w-100"
+              href="{{ url_for('teams.join') }}"
+            >
+              {% trans %}Join Unofficial Team{% endtrans %}
+            </a>
+          </div>
+
+          <div class="col-md-4 mb-3">
+            <a
+              class="btn btn-outline-custom w-100"
+              href="{{ url_for('teams.new') }}"
+            >
+              {% trans %}Create Unofficial Team{% endtrans %}
+            </a>
+          </div>
+
+        </div>
+
+      {% else %}
+
+        <div class="row justify-content-center">
+
+          <div class="col-md-4 mb-3">
+            <a
+              class="btn btn-main w-100"
+              href="{{ url_for('teams.join') }}"
+            >
+              {% trans %}Join Team{% endtrans %}
+            </a>
+          </div>
+
+          <div class="col-md-4 mb-3">
+            <a
+              class="btn btn-main w-100"
+              href="{{ url_for('teams.new') }}"
+            >
+              {% trans %}Create Team{% endtrans %}
+            </a>
+          </div>
+
+        </div>
+
+      {% endif %}
+
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}

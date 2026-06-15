@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+
+@font-face {
+  font-family: "Sochi2014";
+  src: url("/themes/core/static/webfonts/sochi2014_light.ttf") format("truetype");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Sochi2014";
+  src: url("/themes/core/static/webfonts/sochi2014_medium.ttf") format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Sochi2014";
+  src: url("/themes/core/static/webfonts/sochi2014_bold.ttf") format("truetype");
+  font-weight: 700;
+}
+
+* {
+  font-family: "Sochi2014", sans-serif !important;
+}
+
+body {
+  margin: 0;
+  font-weight: 500;
+  overflow-x: hidden;
+}
+
+.hero {
+  min-height: calc(100vh - 140px);
+  background-image: url("/themes/core/static/img/hero.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+
+  padding: 80px 70px;
+  position: relative;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
+
+.hero-title {
+  color: #0052cc;
+  font-size: clamp(70px, 9vw, 150px);
+  line-height: 0.88;
+  margin: 0 0 35px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-shadow: none;
+}
+
+.hero-text {
+  color: #0052cc;
+  font-size: clamp(26px, 2.4vw, 44px);
+  line-height: 1.15;
+  margin-bottom: 40px;
+  font-weight: 700;
+  text-shadow: none;
+}
+
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #0052cc;
+  color: white !important;
+  text-decoration: none;
+  padding: 18px 38px;
+  border-radius: 8px;
+  font-size: 24px;
+  font-weight: 700;
+  transition: 0.2s ease;
+}
+
+.hero-btn:hover {
+  background: #003fa0;
+  transform: translateY(-2px);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar-brand,
+.nav-link {
+  font-weight: 700;
+}
+
+</style>
+
+<title>{{ title or Configs.ctf_name }}</title>
+
+<meta charset="utf-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
+<link
+  rel="shortcut icon"
+  href="{{ Configs.ctf_small_icon }}"
+  type="image/x-icon"
+>
+
+{{ meta | safe }}
+
+{% block stylesheets %}
+  {{ Assets.css("assets/scss/main.scss") }}
+{% endblock %}
+
+{{ Plugins.styles }}
+
+{{ Assets.js("assets/js/color_mode_switcher.js", type=None) }}
+
+<script type="text/javascript">
+    window.init = {
+        'urlRoot': "{{ request.script_root }}",
+        'csrfNonce': "{{ Session.nonce }}",
+        'userMode': "{{ Configs.user_mode }}",
+        'userId': {{ Session.id }},
+        'userName': {{ User.name | tojson }},
+        'userEmail': {{ User.email | tojson }},
+        'userVerified': {{ User.verified | tojson }},
+        'teamId': {{ Team.id | tojson }},
+        'teamName': {{ Team.name | tojson }},
+        'start': {{ Configs.start | tojson }},
+        'end': {{ Configs.end | tojson }},
+        'themeSettings': {{ Configs.theme_settings | tojson }},
+        'eventSounds': [
+          "/themes/core/static/sounds/notification.webm",
+          "/themes/core/static/sounds/notification.mp3",
+        ],
+    }
+</script>
+
+{{ Configs.theme_header }}
+
+</head>
+
+<body>
+
+{% include "components/navbar.html" %}
+
+<main role="main">
+
+  <section class="hero">
+    <div class="hero-content">
+
+      <h1 class="hero-title">
+        VKACTF<br>
+        2026
+      </h1>
+
+      <div class="hero-text">
+        БЫСТРЕЕ.<br>
+        ВЫШЕ.<br>
+        СИЛЬНЕЕ.
+      </div>
+
+      <a href="/challenges" class="hero-btn">
+        К ЗАДАНИЯМ ›
+      </a>
+
+    </div>
+  </section>
+
+</main>
+
+{% include "components/snackbar.html" %}
+
+
+
+{% include "components/notifications.html" %}
+
+{% block scripts %}
+  {{ Assets.js("assets/js/page.js") }}
+{% endblock %}
+
+{{ Plugins.scripts }}
+
+{{ Configs.theme_footer }}
+
+</body>
+</html>

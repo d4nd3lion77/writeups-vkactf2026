@@ -1,0 +1,329 @@
+<style>
+body {
+    background-image: url("/themes/core/static/img/hero.png");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    margin: 0;
+}
+  .rules-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 35px;
+  padding-bottom: 30px;
+  border-bottom: 2px solid rgba(11, 100, 232, 0.25);
+}
+
+.team-block {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.team-img {
+  width: 100px;
+  height: auto;
+  border-radius: 18px;
+}
+
+.team-label {
+  font-size: 20px;
+  font-weight: 700;
+  opacity: 0.85;
+}
+
+.team-name {
+  font-size: 34px;
+  font-weight: 900;
+  color: #0052cc;
+}
+
+.flag-format {
+  background: #0052cc;
+  color: white;
+  padding: 25px 35px;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 82, 204, 0.25);
+}
+
+.flag-title {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.flag-format code {
+  display: block;
+  background: white;
+  color: #0052cc;
+  padding: 14px 20px;
+  border-radius: 14px;
+  font-size: 24px;
+  font-weight: 900;
+}
+.rules {
+  padding: 70px 12%;
+  background: transparent;
+  color: #0755d8;
+}
+
+.rules-card h2 {
+  font-size: 40px;
+  margin: 0 0 30px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #0755d8;
+}
+.rules-card {
+  background: rgba(255, 255, 255, 1.0);
+  border: 3px solid #0b64e8;
+  border-radius: 20px;
+  padding: 35px 45px;
+  box-shadow: 0 10px 30px rgba(0, 90, 200, 0.18);
+}
+
+.rules-card ol {
+  margin: 0;
+  padding-left: 28px;
+}
+
+.rules-card li {
+  font-size: 24px;
+  line-height: 1.5;
+  margin-bottom: 14px;
+  font-weight: 700;
+}
+  .hero-home {
+    min-height: 100vh;
+}
+  .hero-home-content {
+    max-width: 600px;
+  }
+
+  .hero-home-title {
+    color: #0052cc;
+    font-size: clamp(70px, 9vw, 150px);
+    line-height: 0.88;
+    margin: 0 0 35px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: none;
+  }
+
+  .hero-home-text {
+    color: #0052cc;
+    font-size: clamp(26px, 2.4vw, 44px);
+    line-height: 1.15;
+    margin-bottom: 40px;
+    font-weight: 700;
+    text-shadow: none;
+  }
+
+  .hero-home-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #0052cc;
+    color: white !important;
+
+    text-decoration: none;
+    padding: 18px 38px;
+
+    border-radius: 8px;
+
+    font-size: 24px;
+    font-weight: 700;
+
+    transition: 0.2s ease;
+  }
+
+  .hero-home-btn:hover {
+    background: #003fa0;
+    color: white !important;
+    transform: translateY(-2px);
+    text-decoration: none;
+  }
+  @media (max-width: 768px) {
+  body {
+  background-attachment: scroll;
+  background-size: auto 100vh;
+  background-position: center 0;
+}
+
+.hero-home {
+  min-height: 78vh;
+  padding: 15px 24px 110px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+  .hero-home-title {
+    font-size: 64px;
+  }
+
+  .hero-home-text {
+    font-size: 26px;
+  }
+
+  .hero-home-btn {
+    font-size: 20px;
+    padding: 15px 30px;
+  }
+
+.rules {
+  position: relative;
+  margin-top: -80px;
+  padding: 130px 14px 55px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.45) 18%,
+    rgba(255, 255, 255, 0.85) 38%,
+    rgba(255, 255, 255, 1) 60%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+.rules::before {
+  content: "";
+  position: absolute;
+  left: -15px;
+  right: 0;
+  top: -90px;
+  height: 175px;
+  width: 110%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  pointer-events: none;
+}
+  .rules-card {
+    padding: 24px 18px;
+    border-radius: 22px;
+  }
+
+  .rules-card h2 {
+    font-size: 28px;
+    line-height: 1.15;
+    margin-bottom: 24px;
+  }
+
+  .rules-top {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 22px;
+    margin-bottom: 26px;
+    padding-bottom: 24px;
+  }
+
+  .team-block {
+    gap: 14px;
+  }
+
+  .team-img {
+    width: 72px;
+    height: auto;
+    border-radius: 14px;
+    flex-shrink: 0;
+  }
+
+  .team-label {
+    font-size: 15px;
+  }
+
+  .team-name {
+    font-size: 24px;
+  }
+
+  .flag-format {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 18px 14px;
+    border-radius: 18px;
+  }
+
+  .flag-title {
+    font-size: 16px;
+  }
+
+  .flag-format code {
+    font-size: 15px;
+    padding: 12px 10px;
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  .rules-card ol {
+    padding-left: 22px;
+  }
+
+  .rules-card li {
+    font-size: 17px;
+    line-height: 1.45;
+    margin-bottom: 12px;
+  }
+}
+</style>
+
+<section class="hero-home">
+  <div class="hero-home-content">
+
+    <h1 class="hero-home-title">
+      VKACTF<br>
+      2026
+    </h1>
+
+    <div class="hero-home-text">
+      БЫСТРЕЕ.<br>
+      ВЫШЕ.<br>
+      СИЛЬНЕЕ.
+    </div>
+
+    <a href="/challenges" class="hero-home-btn">
+      К ЗАДАНИЯМ ›
+    </a>
+
+  </div>
+</section>
+<section class="rules">
+  
+
+  <div class="rules-card">
+	<h2>Правила проведения соревнований</h2>
+    <div class="rules-top">
+      <div class="team-block">
+        <img src="/themes/core/static/img/team.png" alt="Red Cadets" class="team-img">
+
+        <div class="team-text">
+          <div class="team-label">Организаторы соревнований</div>
+          <div class="team-name">Red Cadets</div>
+        </div>
+      </div>
+
+      <div class="flag-format">
+        <div class="flag-title">Формат флага</div>
+        <code>vka{A-Za-z0-9_–!@$+-=}</code>
+      </div>
+    </div>
+
+    <ol>
+      <li>Участники выполняют задания самостоятельно.</li>
+      <li>Запрещено передавать флаги другим командам.</li>
+      <li>Запрещены атаки на инфраструктуру платформы.</li>
+      <li>Разрешено использовать любые открытые источники информации.</li>
+      <li>За каждое решённое задание команда получает баллы.</li>
+      <li>Победитель определяется по количеству баллов, при равенстве — по времени последней сдачи.</li>
+      <li>Организаторы могут дисквалифицировать команду за нарушение правил.</li>
+    </ol>
+
+  </div>
+</section>

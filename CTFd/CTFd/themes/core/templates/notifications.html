@@ -1,0 +1,158 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+  body {
+    background: url('/themes/core/static/img/notif.png') center center / cover no-repeat fixed;
+  }
+
+  .page-bg {
+    min-height: 100vh;
+    padding-bottom: 50px;
+  }
+
+  .hero-header {
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-header h1 {
+    color: #0057ff;
+    font-size: 3.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 0;
+    text-shadow:
+      0 2px 10px rgba(255,255,255,.8),
+      0 4px 20px rgba(0,87,255,.15);
+  }
+
+  .notifications-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+  }
+
+  .notification-tile {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 18px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.18);
+    border: none;
+  }
+
+  .notification-tile .card-body {
+    padding: 0;
+  }
+
+  .notification-tile h3 {
+    color: #304e86;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+    border-bottom: 2px solid rgba(48, 78, 134, 0.15);
+    padding-bottom: 12px;
+  }
+
+  .notification-tile blockquote {
+    margin: 0;
+  }
+
+  .notification-tile p {
+    color: #304e86;
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+
+  .notification-tile small {
+    color: rgba(48, 78, 134, 0.7) !important;
+    font-weight: 600;
+  }
+
+  .empty-notifications {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 35px 20px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.18);
+  }
+
+  .empty-notifications h2 {
+    color: #304e86;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+
+  @media (max-width: 1200px) {
+    .notifications-wrapper {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-header h1 {
+      font-size: 2.5rem;
+    }
+
+    .notifications-wrapper {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+</style>
+
+<div class="page-bg">
+
+  <div class="hero-header">
+    <div class="container text-center">
+      <h1>{% trans %}Уведомления{% endtrans %}</h1>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="notifications-wrapper">
+
+      {% if not notifications %}
+      <div class="empty-notifications">
+        <h2 class="text-center">
+          {% trans %}Уведомлений пока нет{% endtrans %}
+        </h2>
+      </div>
+      {% endif %}
+
+      {% for notification in notifications %}
+      <div class="card notification-tile mb-4">
+        <div class="card-body">
+          <h3 class="card-title">{{ notification.title }}</h3>
+
+          <blockquote class="blockquote mb-0">
+            <p>{{ notification.html }}</p>
+            <small>
+              <span data-time="{{ notification.date | isoformat }}"></span>
+            </small>
+          </blockquote>
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+
+</div>
+
+
+{% endblock %}
+
+{% block scripts %}
+  {{ Assets.js("assets/js/notifications.js") }}
+{% endblock %}

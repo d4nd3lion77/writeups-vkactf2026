@@ -1,0 +1,52 @@
+@font-face {
+  font-family: "Sochi2014";
+  src: url("/themes/core/static/webfonts/sochi2014_light.ttf") format("truetype");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Sochi2014";
+  src: url("/themes/core/static/webfonts/sochi2014_medium.ttf") format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Sochi2014";
+  src: url("/themes/core/static/webfonts/sochi2014_bold.ttf") format("truetype");
+  font-weight: 700;
+}
+
+$fa-font-path: "../webfonts";
+
+@import "~/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "~/@fortawesome/fontawesome-free/scss/solid.scss";
+@import "~/@fortawesome/fontawesome-free/scss/brands.scss";
+
+* {
+  font-family: "Sochi2014", sans-serif !important;
+}
+
+html,
+body,
+.container {
+  font-family: "Sochi2014", sans-serif !important;
+  font-weight: 500;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar-brand,
+.nav-link,
+.btn {
+  font-family: "Sochi2014", sans-serif !important;
+  font-weight: 700;
+}
+
+.jumbotron .container {
+  font-family: "Sochi2014", sans-serif !important;
+  font-weight: 700;
+}
