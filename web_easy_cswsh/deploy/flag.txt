@@ -1,1 +1,0 @@
-vkactf{websockets_csrf_is_easy_flag_in_easy_web}

@@ -1,2 +1,0 @@
-C:\When_User_Error\Apollo-11-master\virtualagc\Hello\FRESH\PACKAGE\build-kit\dist\Message.pdb
-C:\When_User_Error\Apollo-11-master\virtualagc\Hello\FRESH\PACKAGE\build-kit\dist\Message.exe

@@ -1,2 +1,0 @@
-python3 make_archives.py --number 10 --flag 'vkactf{coldboot_mips_nvram_recovery_didnt_got_so_deep}' --cc mips-linux-gnu-gcc
-

@@ -1,4 +1,0 @@
-#!/bin/sh
-echo "nvramctl: read-only build"
-echo "profile=7"
-echo "protected=1"
