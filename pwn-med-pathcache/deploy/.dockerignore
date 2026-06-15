@@ -1,0 +1,7 @@
+SERVER_EVAL_x64FRE_en-us.iso
+image/*.vhdx
+image/*.qcow2
+image/*.log
+image/seed/
+image/*.bak
+image/*.partial.qcow2

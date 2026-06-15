@@ -1,0 +1,4 @@
+solve/__pycache__
+deploy/images
+*.qcow2
+*.iso
