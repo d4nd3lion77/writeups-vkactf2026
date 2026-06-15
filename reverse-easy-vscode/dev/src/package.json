@@ -1,0 +1,30 @@
+{
+  "name": "darktheme-pro",
+  "displayName": "DarkHackerTheme Pro",
+  "description": "A beautiful dark theme for VS Code",
+  "version": "1.2.1",
+  "publisher": "vka",
+    "icon": "logo.png",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "themes": [
+      {
+        "label": "DarkHackerTheme Pro",
+        "uiTheme": "vs-dark",
+        "path": "./themes/darktheme-pro-color-theme.json"
+      }
+    ]
+  },
+  "dependencies": {
+    "pngjs": "^7.0.0"
+  }
+}
