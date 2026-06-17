@@ -65,5 +65,5 @@ email=BBBBBBBBBBBBB&uid=10&role=admin
 ### Флаг
 
 ```
-vka{...}
+vka{ecb_crypto_admin_ouess_kbod}
 ```

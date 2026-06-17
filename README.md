@@ -9,7 +9,7 @@
 #### Crypto
 
 - [ДРЕВНИЙ БОГ АРХИВАРИУС](categories/crypto/cry-hard-archivarius/solution/writeup.md)
-- [Битва экрасенсов](categories/crypto/crypto-easy-tarobattle/solution/writeup.md)
+- [Битва экстрасенсов](categories/crypto/crypto-easy-tarobattle/solution/writeup.md)
 - [КБОД](categories/crypto/cry-ease-medium-ecb/solution/writeup.md)
 
 
